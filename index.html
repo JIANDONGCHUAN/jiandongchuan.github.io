@@ -1,9 +1,884 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p>Can anybody hear me?
-<p>我是串串酱，快来参观我的网站
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Dongchuan Jian - Geologist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#722ED1',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            .bg-gradient-accent {
+                background: linear-gradient(135deg, #165DFF 0%, #722ED1 100%);
+            }
+            .media-card-hover {
+                transition: all 0.3s ease;
+            }
+            .media-card-hover:hover {
+                transform: translateY(-5px);
+            }
+            .pagination-item {
+                @apply w-10 h-10 flex items-center justify-center rounded-full transition-all;
+            }
+            .pagination-item.active {
+                @apply bg-primary text-white;
+            }
+            .pagination-item:not(.active) {
+                @apply bg-white text-dark/70 hover:bg-primary/10 hover:text-primary;
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-white text-dark antialiased">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 md:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-primary" id="nav-name">Loading...</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-dark/80 hover:text-primary transition-colors">About</a>
+                    <a href="#news" class="text-dark/80 hover:text-primary transition-colors">News</a>
+                    <a href="#research" class="text-dark/80 hover:text-primary transition-colors">Research</a>
+                    <a href="#publications" class="text-dark/80 hover:text-primary transition-colors">Publications</a>
+                    <a href="#funding" class="text-dark/80 hover:text-primary transition-colors">Funding</a>
+                    <a href="#media" class="text-dark/80 hover:text-primary transition-colors">Media</a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="hidden md:flex space-x-4" id="social-links">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-dark hover:text-primary">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#about" class="text-dark/80 hover:text-primary transition-colors py-2">About</a>
+                <a href="#news" class="text-dark/80 hover:text-primary transition-colors py-2">News</a>
+                <a href="#research" class="text-dark/80 hover:text-primary transition-colors py-2">Research</a>
+                <a href="#publications" class="text-dark/80 hover:text-primary transition-colors py-2">Publications</a>
+                <a href="#funding" class="text-dark/80 hover:text-primary transition-colors py-2">Funding</a>
+                <a href="#media" class="text-dark/80 hover:text-primary transition-colors py-2">Media</a>
+                <div class="flex space-x-4 py-2" id="mobile-social-links">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 space-y-6" id="hero-content">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                <div class="md:w-1/2 relative" id="hero-image-container">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-12 text-center">About Me</h2>
+
+                <div class="space-y-6 text-lg text-dark/80 leading-relaxed" id="about-content">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section with Pagination -->
+    <section id="news" class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Latest News</h2>
+            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Professional updates, academic activities and
+                publications</p>
+
+            <div id="news-container" class="max-w-4xl mx-auto">
+                <!-- News items will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-12" id="pagination-container">
+                <button id="prev-page"
+                    class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary/5 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                    <i class="fa fa-chevron-left mr-2"></i> Previous
+                </button>
+
+                <div id="page-numbers" class="flex gap-2">
+                    <!-- Page numbers will be inserted here by JavaScript -->
+                </div>
+
+                <button id="next-page"
+                    class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary/5 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                    Next <i class="fa fa-chevron-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas Section -->
+    <section id="research" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Research Areas</h2>
+            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Exploring the Earth's geological evolution
+                through advanced analytical methods and data integration</p>
+
+            <div class="grid md:grid-cols-3 gap-8" id="research-areas-container">
+                <!-- Research areas will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Publications</h2>
+            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Research papers and publications</p>
+
+            <div id="publications-container" class="space-y-8 max-w-4xl mx-auto">
+                <!-- Publications will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Funding Section -->
+    <section id="funding" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Research Funding</h2>
+            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Grants and research support</p>
+
+            <div class="max-w-3xl mx-auto" id="funding-container">
+                <!-- Funding items will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Media</h2>
+            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Research activities, fieldwork and presentations
+            </p>
+
+            <div class="text-center">
+                <a href="https://www.researchgate.net/profile/Dongchuan-Jian/research" target="_blank"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
+                    id="media-link">
+                    <i class="fa fa-external-link"></i>
+                    <span>View media</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0" id="footer-name">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-4 mb-4" id="footer-social-links">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                    <p class="text-white/60 text-sm">© <span id="current-year"></span> All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Embedded personal data
+        const personalData = {
+            "basicInfo": {
+                "name": "Dongchuan Jian, Ph.D.",
+                "title": "Geologist specializing in Geoscience Big Data & Plate Tectonics",
+                "affiliation": "Northwest University",
+                "position": "Postdoctoral Researcher",
+                "shortBio": "Focusing on quantitative analysis of detrital zircon records and their implications for ancient tectonic settings.",
+                "email": "jiandongchuan@163.com",
+                "heroImage": "assets/images/JDC.jpg",
+                "heroImageAlt": "Dr. Dongchuan Jian portrait"
+            },
+            "socialLinks": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/JIANDONGCHUAN",
+                    "icon": "fa-github"
+                },
+                {
+                    "name": "ResearchGate",
+                    "url": "https://www.researchgate.net/profile/Dongchuan-Jian",
+                    "icon": "fa-flask"
+                },
+                {
+                    "name": "ORCID",
+                    "url": "https://orcid.org/0000-0003-3840-0168",
+                    "icon": "fa-id-card"
+                },
+                {
+                    "name": "Email",
+                    "url": "mailto:jiandongchuan@163.com",
+                    "icon": "fa-envelope"
+                }
+            ],
+            "about": {
+                "bio": "I am a geologist currently working as a postdoctoral researcher at Northwest University. My research focuses on geoscience big data and plate tectonics, with particular emphasis on quantitative analysis of detrital zircon records and their implications for ancient tectonic settings.",
+                "education": [
+                    {
+                        "degree": "Ph.D. in Tectonic Geology",
+                        "institution": "Northwest University",
+                        "year": "2023"
+                    },
+                    {
+                        "degree": "M.S. in Petrology, Mineralogy, and Mineral Resources",
+                        "institution": "China University of Geosciences (Beijing)",
+                        "year": "2018"
+                    },
+                    {
+                        "degree": "B.S. in Resource Exploration Engineering",
+                        "institution": "Hefei University of Technology",
+                        "year": "2015"
+                    }
+                ],
+                "bioContinued": "My research findings have been published in prestigious journals including <em>Journal of Geophysical Research: Solid Earth</em> and <em>Precambrian Research</em>. I am passionate about integrating geoscience big data with traditional geological approaches to better understand Earth's evolutionary history."
+            },
+            "news": [
+                {
+                    "id": 1,
+                    "date": "2025-07-08",
+                    "title": "Poster presentation at Goldschmidt2025",
+                    "link": "https://conf.goldschmidt.info/goldschmidt/2025/meetingapp.cgi/Paper/29571",
+                    "description": "Presented poster: 'GIS-Assisted Exploration of Tectonic Settings through Sedimentary Sample Analysis: Implications for Earth's Early Dynamic History' at Goldschmidt2025 (online)."
+                },
+                {
+                    "id": 2,
+                    "date": "2025-05-12",
+                    "title": "Awarded Shaanxi Provincial Youth Project",
+                    "link": "#",
+                    "description": "Received funding for project: 'Big Data-Driven Detrital Zircon Analysis: A New Perspective on Plate Reconstruction' with grant number 2025JC-YBQN383. Duration: January 2025 - December 2026. Amount: 50,000 RMB."
+                },
+                {
+                    "id": 3,
+                    "date": "2024-06-09",
+                    "title": "Invited talk at 'Sedimentary Voices' Academic Forum",
+                    "links": [
+                        "https://mp.weixin.qq.com/s/ErcNhGkPIsom1M_Ay_EjHA",
+                        "https://www.koushare.com/live/details/35081?vid=136895"
+                    ],
+                    "description": "Gave an invited presentation at the 51st session of the 'Sedimentary Voices' Academic Forum."
+                },
+                {
+                    "id": 4,
+                    "date": "2024-05-19",
+                    "title": "Oral presentation at The 6th International Conference on Paleogeography",
+                    "link": "#",
+                    "description": "Presented 'The Link between Deep-time Detrital Zircon Record and Plate Reconstruction Models' as an oral report (T7-006) at the conference in Nanjing."
+                },
+                {
+                    "id": 5,
+                    "date": "2024-05-10",
+                    "title": "Interview in 'Abyssal Geeks' series",
+                    "link": "#",
+                    "description": "Featured in the first episode of the 'Abyssal Geeks' interview series."
+                },
+                {
+                    "id": 6,
+                    "date": "2024-03-14",
+                    "title": "Scientific volunteer in Deep Blue Exploration citizen science cruise",
+                    "link": "#",
+                    "description": "Participated in the citizen science marine expedition cruise in the Xisha Islands, South China Sea, serving as a science communicator and researcher aboard the Chinese science ship \"Xiangyanghong 10\". The expedition took place from March 14 to March 18, 2024. Organized by: China Ocean Association Science Popularization Working Committee and Ningbo Deep Blue Exploration Marine Culture Development Co., Ltd."
+                },
+                {
+                    "id": 7,
+                    "date": "2023-06-25",
+                    "title": "Awarded 2023 Excellent Doctoral Dissertation at Northwest University",
+                    "link": "#",
+                    "description": "Received recognition for outstanding doctoral dissertation at Northwest University."
+                },
+                {
+                    "id": 8,
+                    "date": "2023-04-24",
+                    "title": "Poster presentation at EGU General Assembly 2023",
+                    "link": "https://doi.org/10.5194/egusphere-egu23-11026",
+                    "description": "Presented poster: 'Linking detrital zircon and supercontinent over the past 3 billion years' at EGU General Assembly 2023 in Vienna, Austria."
+                },
+                {
+                    "id": 9,
+                    "date": "2023-04-15",
+                    "title": "Oral presentation at National Symposium on Data-Driven Geoscience Development",
+                    "link": "#",
+                    "description": "Gave oral presentation on 'Detrital Zircon Big Data and Supercontinent Cycles' at the Inaugural National Academic Symposium in Zhuhai."
+                },
+                {
+                    "id": 10,
+                    "date": "2021-04-19",
+                    "title": "Oral presentation at EGU General Assembly 2021",
+                    "link": "https://doi.org/10.5194/egusphere-egu21-10078",
+                    "description": "Presented 'Implications of the detrital zircon record for global plate tectonic reconstructions in deep time' at EGU General Assembly 2021 (online)."
+                },
+                {
+                    "id": 11,
+                    "date": "2017-12-06",
+                    "title": "Participated in China Ocean Expedition Voyage 49",
+                    "link": "#",
+                    "description": "Served as a scientific team member on the first leg of China's 49th Ocean Expedition in the Southwest Indian Ocean aboard the Chinese science ship \"Xiangyanghong 10\". The expedition took place from December 6, 2017 to January 31, 2018, conducting seafloor geological surveys. Organized by: China Ocean Association and Second Institute of Oceanography, Ministry of Natural Resources."
+                }
+            ],
+            "researchAreas": [
+                {
+                    "title": "Geoscience Big Data Analysis",
+                    "description": "Developing quantitative approaches to analyze large geological datasets, with applications in tectonic reconstruction and sedimentary basin analysis.",
+                    "icon": "fa-database"
+                },
+                {
+                    "title": "Global Plate Reconstruction Models",
+                    "description": "Constructing and refining plate tectonic models for deep-time Earth history, integrating geological, geophysical, and geochemical data.",
+                    "icon": "fa-globe"
+                },
+                {
+                    "title": "Detrital Zircon Geochronology",
+                    "description": "Using zircon U-Pb geochronology to constrain sedimentary provenance and tectonic evolution of orogenic belts and sedimentary basins.",
+                    "icon": "fa-cubes"
+                }
+            ],
+            "publications": [
+                {
+                    "id": 1,
+                    "title": "Linking detrital zircon record and supercontinent over the past 3.5 billion years",
+                    "authors": "Jian, D., Williams, S.E., Zhao, G., Yu, S.",
+                    "journal": "Precambrian Research",
+                    "year": 2025,
+                    "month": "02",
+                    "day": "28",
+                    "doi": "https://doi.org/10.1016/j.precamres.2025.107680",
+                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",
+                    "imageUrl": "assets/images/2025PR.png",
+                    "imageAlt": "Zircon grain under microscope"
+                },
+                {
+                    "id": 2,
+                    "title": "Reconstructing the Yunkai terrane (West Cathaysia): Evidence for hot, thin end-Mesoproterozoic to early Tonian orogens",
+                    "authors": "Yao, J., Cawood, P.A., Zhao, G., Shu, L., Han, Y., Liu, Q., Zhang, D., Xia, X., Yang, H., Jian, D., Zhao, X.",
+                    "journal": "GSA Bulletin",
+                    "year": 2025,
+                    "month": "06",
+                    "day": "23",
+                    "doi": "https://doi.org/10.1130/B38160.1",
+                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",
+                    "imageUrl": "assets/images/2025GSAB.png",
+                    "imageAlt": "Geological map of Yunkai terrane"
+                },
+                {
+                    "id": 3,
+                    "title": "Quantifying the Link Between the Detrital Zircon Record and Tectonic Settings",
+                    "authors": "Jian, D., Williams, S.E., Yu, S., Zhao, G.",
+                    "journal": "JGR Solid Earth",
+                    "year": 2022,
+                    "month": "09",
+                    "day": "08",
+                    "doi": "https://doi.org/10.1029/2022JB024606",
+                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",
+                    "imageUrl": "assets/images/2022JGR.png",
+                    "imageAlt": "Graph showing zircon age distributions"
+                }
+            ],
+            "funding": [
+                {
+                    "id": 1,
+                    "title": "Shaanxi Provincial Youth Project: Big Data-Driven Detrital Zircon Analysis: A New Perspective on Plate Reconstruction",
+                    "fundingBody": "Shaanxi Provincial Department of Science and Technology",
+                    "grantNumber": "2025JC-YBQN383",
+                    "awardedDate": "May 12, 2025",
+                    "duration": "January 2025 - December 2026",
+                    "amount": "50,000 RMB",
+                    "icon": "fa-money"
+                }
+            ],
+            "media": {
+                "linkText": "View media",
+                "placeholderUrl": "https://www.researchgate.net/profile/Dongchuan-Jian"
+            }
+        };
+
+        // DOM Elements
+        const navName = document.getElementById('nav-name');
+        const socialLinks = document.getElementById('social-links');
+        const mobileSocialLinks = document.getElementById('mobile-social-links');
+        const heroContent = document.getElementById('hero-content');
+        const heroImageContainer = document.getElementById('hero-image-container');
+        const aboutContent = document.getElementById('about-content');
+        const newsContainer = document.getElementById('news-container');
+        const researchAreasContainer = document.getElementById('research-areas-container');
+        const publicationsContainer = document.getElementById('publications-container');
+        const fundingContainer = document.getElementById('funding-container');
+        const mediaLink = document.getElementById('media-link');
+        const footerName = document.getElementById('footer-name');
+        const footerSocialLinks = document.getElementById('footer-social-links');
+        const currentYear = document.getElementById('current-year');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+        const paginationContainer = document.getElementById('pagination-container');
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const pageNumbersContainer = document.getElementById('page-numbers');
+
+        // Pagination variables
+        let currentPage = 1;
+        const itemsPerPage = 6;
+        let totalPages = 1;
+        let allNewsItems = [];
+
+        // Helper function to parse date strings into consistent Date objects
+        function parseDate(dateString) {
+            return new Date(dateString);
+        }
+
+        // Helper function to format date for display
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        // Helper function to create social links
+        function createSocialLinks(container) {
+            container.innerHTML = '';
+            personalData.socialLinks.forEach(link => {
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.target = '_blank';
+                a.className = 'text-dark/60 hover:text-primary transition-colors';
+                a.innerHTML = `<i class="fa ${link.icon} text-xl"></i>`;
+                a.title = link.name;
+                container.appendChild(a);
+            });
+        }
+
+        // Populate basic information
+        function populateBasicInfo() {
+            navName.textContent = personalData.basicInfo.name.split(',')[0];
+            createSocialLinks(socialLinks);
+            createSocialLinks(mobileSocialLinks);
+            createSocialLinks(footerSocialLinks);
+
+            footerName.innerHTML = `
+                <h3 class="text-xl font-bold mb-2">${personalData.basicInfo.name}</h3>
+                <p class="text-white/60">${personalData.basicInfo.position}</p>
+            `;
+
+            currentYear.textContent = new Date().getFullYear();
+        }
+
+        // Populate hero section
+        function populateHeroSection() {
+            heroContent.innerHTML = `
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight">
+                    ${personalData.basicInfo.name}
+                </h1>
+                <p class="text-[clamp(1.2rem,2vw,1.5rem)] text-dark/70 font-light">
+                    ${personalData.basicInfo.title}
+                </p>
+                <p class="text-lg text-dark/80 max-w-lg text-balance">
+                    ${personalData.basicInfo.position} at ${personalData.basicInfo.affiliation}, ${personalData.basicInfo.shortBio}
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#publications" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-1">
+                        View Publications
+                    </a>
+                    <a href="#research" class="px-6 py-3 bg-white text-primary border border-primary rounded-lg hover:bg-primary/5 transition-all">
+                        Research Areas
+                    </a>
+                </div>
+            `;
+
+            heroImageContainer.innerHTML = `
+                <div class="w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl animate-float">
+                    <img src="${personalData.basicInfo.heroImage}" alt="${personalData.basicInfo.heroImageAlt}" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="fa fa-university text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-dark/60">Affiliation</p>
+                            <p class="font-medium">${personalData.basicInfo.affiliation}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Populate about section
+        function populateAboutSection() {
+            let educationHtml = '';
+            personalData.about.education.forEach(edu => {
+                educationHtml += `
+                    <li class="flex gap-3">
+                        <i class="fa fa-graduation-cap text-primary mt-1"></i>
+                        <div>
+                            <p class="font-medium">${edu.degree}</p>
+                            <p class="text-dark/70">${edu.institution}, ${edu.year}</p>
+                        </div>
+                    </li>
+                `;
+            });
+
+            aboutContent.innerHTML = `
+                <p>${personalData.about.bio}</p>
+                
+                <div class="bg-light p-6 rounded-xl mt-8">
+                    <h3 class="font-semibold text-lg mb-4">Education</h3>
+                    <ul class="space-y-3">
+                        ${educationHtml}
+                    </ul>
+                </div>
+                
+                <p>${personalData.about.bioContinued}</p>
+            `;
+        }
+
+        // Initialize news data and pagination
+        function initNewsData() {
+            // Convert publications to news items with complete date information
+            const publicationNews = personalData.publications.map(pub => ({
+                id: `pub-${pub.id}`,
+                date: `${pub.year}-${pub.month}-${pub.day}`,
+                title: `New publication in ${pub.journal}`,
+                link: pub.doi,
+                description: `Published paper: "${pub.title}" by ${pub.authors}.`,
+                type: 'publication'
+            }));
+
+            // Combine existing news with publication news and sort
+            allNewsItems = [...personalData.news, ...publicationNews].sort((a, b) => {
+                if (a.date > b.date) return -1;
+                if (a.date < b.date) return 1;
+                return 0;
+            });
+
+            // Calculate total pages
+            totalPages = Math.ceil(allNewsItems.length / itemsPerPage);
+
+            // Initialize pagination
+            renderPagination();
+            showPage(currentPage);
+        }
+
+        // Render pagination controls
+        function renderPagination() {
+            // Clear existing page numbers
+            pageNumbersContainer.innerHTML = '';
+
+            // Add page number buttons
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `pagination-item ${i === currentPage ? 'active' : ''}`;
+                pageBtn.textContent = i;
+                pageBtn.addEventListener('click', () => {
+                    currentPage = i;
+                    showPage(currentPage);
+                    renderPagination();
+                    updatePaginationButtons();
+                });
+                pageNumbersContainer.appendChild(pageBtn);
+            }
+
+            // Update previous/next buttons state
+            updatePaginationButtons();
+
+            // Add event listeners to previous/next buttons
+            prevPageBtn.onclick = () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    showPage(currentPage);
+                    renderPagination();
+                    updatePaginationButtons();
+                }
+            };
+
+            nextPageBtn.onclick = () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    showPage(currentPage);
+                    renderPagination();
+                    updatePaginationButtons();
+                }
+            };
+        }
+
+        // Update previous/next buttons state
+        function updatePaginationButtons() {
+            prevPageBtn.disabled = currentPage === 1;
+            nextPageBtn.disabled = currentPage === totalPages;
+        }
+
+        // Show specific page of news items
+        function showPage(pageNum) {
+            // Calculate indices for items to display
+            const startIndex = (pageNum - 1) * itemsPerPage;
+            const endIndex = Math.min(startIndex + itemsPerPage, allNewsItems.length);
+            const currentItems = allNewsItems.slice(startIndex, endIndex);
+
+            // Render current page items
+            let newsHtml = '';
+            currentItems.forEach(item => {
+                // Add special badge for publications
+                const badge = item.type === 'publication' ?
+                    `<span class="ml-2 text-xs font-medium bg-accent/10 text-accent px-2 py-0.5 rounded-full">
+                        Publication
+                    </span>` : '';
+
+                // Format date for display
+                const displayDate = formatDate(item.date);
+
+                // Add links at the end of description if available
+                let linksHtml = '';
+                if (item.links && item.links.length > 0) {
+                    item.links.forEach((link, index) => {
+                        if (link && link !== '#') {
+                            linksHtml += `<br><a href="${link}" target="_blank" class="text-primary hover:underline inline-flex items-center gap-1 mt-2">
+                                <i class="fa fa-external-link"></i> View details ${index + 1}
+                            </a>`;
+                        }
+                    });
+                } else if (item.link && item.link !== '#') {
+                    linksHtml = `<br><a href="${item.link}" target="_blank" class="text-primary hover:underline inline-flex items-center gap-1 mt-2">
+                        <i class="fa fa-external-link"></i> View details
+                    </a>`;
+                }
+
+                newsHtml += `
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6 hover:shadow-lg transition-shadow">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4 mb-3">
+                            <span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full flex items-center">
+                                ${displayDate}
+                                ${badge}
+                            </span>
+                            <h3 class="text-xl font-semibold">
+                                ${item.title}
+                            </h3>
+                        </div>
+                        <p class="text-dark/70">${item.description}${linksHtml}</p>
+                    </div>
+                `;
+            });
+
+            newsContainer.innerHTML = newsHtml;
+
+            // Scroll to top of news section when page changes
+            document.getElementById('news').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Populate research areas
+        function populateResearchAreas() {
+            let researchHtml = '';
+            personalData.researchAreas.forEach(area => {
+                researchHtml += `
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all media-card-hover">
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fa ${area.icon} text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">${area.title}</h3>
+                        <p class="text-dark/70">${area.description}</p>
+                    </div>
+                `;
+            });
+
+            researchAreasContainer.innerHTML = researchHtml;
+        }
+
+        // Populate publications sorted by year (newest first)
+        function populatePublications() {
+            const sortedPublications = [...personalData.publications].sort((a, b) => {
+                if (a.year !== b.year) return b.year - a.year;
+                if (a.month !== b.month) return b.month - a.month;
+                return b.day - a.day;
+            });
+
+            let pubsHtml = '';
+            sortedPublications.forEach(pub => {
+                pubsHtml += `
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3 h-48 md:h-auto">
+                                <img src="${pub.imageUrl}" alt="${pub.imageAlt}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                                        ${formatDate(`${pub.year}-${pub.month}-${pub.day}`)}
+                                    </span>
+                                    <span class="text-dark/60 text-sm">${pub.journal}</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-3">${pub.title}</h3>
+                                <p class="text-dark/70 mb-4">${pub.authors}</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="${pub.doi}" target="_blank" class="text-sm flex items-center gap-1 text-primary hover:underline">
+                                        <i class="fa fa-external-link"></i> DOI
+                                    </a>
+                                    <a href="${pub.pdfUrl}" target="_blank" class="text-sm flex items-center gap-1 text-primary hover:underline">
+                                        <i class="fa fa-file-pdf-o"></i> PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            publicationsContainer.innerHTML = pubsHtml;
+        }
+
+        // Populate funding
+        function populateFunding() {
+            let fundingHtml = '';
+            personalData.funding.forEach(fund => {
+                fundingHtml += `
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                <i class="fa ${fund.icon} text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-3">${fund.title}</h3>
+                                <div class="space-y-2 text-dark/80">
+                                    <p><span class="font-medium">Funding Body:</span> ${fund.fundingBody}</p>
+                                    <p><span class="font-medium">Grant Number:</span> ${fund.grantNumber}</p>
+                                    <p><span class="font-medium">Awarded:</span> ${fund.awardedDate}</p>
+                                    <p><span class="font-medium">Duration:</span> ${fund.duration}</p>
+                                    <p><span class="font-medium">Amount:</span> ${fund.amount}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            fundingContainer.innerHTML = fundingHtml;
+        }
+
+        // Set up media section with direct link
+        function setupMediaSection() {
+            // 直接在HTML中设置了链接，这里保持同步
+            mediaLink.href = personalData.media.placeholderUrl;
+            mediaLink.target = '_blank';
+            mediaLink.querySelector('span').textContent = personalData.media.linkText;
+        }
+
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize page
+        function initPage() {
+            populateBasicInfo();
+            populateHeroSection();
+            populateAboutSection();
+            initNewsData(); // Initialize news with pagination
+            populateResearchAreas();
+            populatePublications();
+            populateFunding();
+            setupMediaSection();
+        }
+
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', initPage);
+    </script>
 </body>
+
 </html>
