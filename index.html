@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Dongchuan Jian - Geologist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 使用稳定的Font Awesome CDN链接 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    
     <script>
         tailwind.config = {
             theme: {
@@ -30,7 +30,7 @@
             }
         }
     </script>
-
+    
     <style type="text/tailwindcss">
         @layer utilities {
             .content-auto {
@@ -69,14 +69,13 @@
         }
     </style>
 </head>
-
 <body class="font-inter bg-white text-dark antialiased">
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
         <div class="container mx-auto px-4 md:px-6 py-3">
             <div class="flex justify-between items-center">
                 <a href="#" class="text-xl font-bold text-primary" id="nav-name">Loading...</a>
-
+                
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-dark/80 hover:text-primary transition-colors">About</a>
@@ -86,19 +85,19 @@
                     <a href="#funding" class="text-dark/80 hover:text-primary transition-colors">Funding</a>
                     <a href="#media" class="text-dark/80 hover:text-primary transition-colors">Media</a>
                 </div>
-
+                
                 <!-- Social Links -->
                 <div class="hidden md:flex space-x-4" id="social-links">
                     <!-- Will be populated by JavaScript -->
                 </div>
-
+                
                 <!-- Mobile Menu Button -->
                 <button id="menu-toggle" class="md:hidden text-dark hover:text-primary">
                     <i class="fa fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-
+        
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
@@ -134,7 +133,7 @@
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-12 text-center">About Me</h2>
-
+                
                 <div class="space-y-6 text-lg text-dark/80 leading-relaxed" id="about-content">
                     <!-- Will be populated by JavaScript -->
                 </div>
@@ -146,26 +145,23 @@
     <section id="news" class="py-20 bg-light">
         <div class="container mx-auto px-4 md:px-6">
             <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Latest News</h2>
-            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Professional updates, academic activities and
-                publications</p>
-
+            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Professional updates, academic activities and publications</p>
+            
             <div id="news-container" class="max-w-4xl mx-auto">
                 <!-- News items will be inserted here by JavaScript -->
             </div>
-
+            
             <!-- Pagination Controls -->
             <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-12" id="pagination-container">
-                <button id="prev-page"
-                    class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary/5 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                <button id="prev-page" class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary/5 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
                     <i class="fa fa-chevron-left mr-2"></i> Previous
                 </button>
-
+                
                 <div id="page-numbers" class="flex gap-2">
                     <!-- Page numbers will be inserted here by JavaScript -->
                 </div>
-
-                <button id="next-page"
-                    class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary/5 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                
+                <button id="next-page" class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary/5 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
                     Next <i class="fa fa-chevron-right ml-2"></i>
                 </button>
             </div>
@@ -176,9 +172,8 @@
     <section id="research" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-6">
             <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Research Areas</h2>
-            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Exploring the Earth's geological evolution
-                through advanced analytical methods and data integration</p>
-
+            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Exploring the Earth's geological evolution through advanced analytical methods and data integration</p>
+            
             <div class="grid md:grid-cols-3 gap-8" id="research-areas-container">
                 <!-- Research areas will be inserted here by JavaScript -->
             </div>
@@ -190,7 +185,7 @@
         <div class="container mx-auto px-4 md:px-6">
             <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Publications</h2>
             <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Research papers and publications</p>
-
+            
             <div id="publications-container" class="space-y-8 max-w-4xl mx-auto">
                 <!-- Publications will be inserted here by JavaScript -->
             </div>
@@ -202,7 +197,7 @@
         <div class="container mx-auto px-4 md:px-6">
             <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Research Funding</h2>
             <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Grants and research support</p>
-
+            
             <div class="max-w-3xl mx-auto" id="funding-container">
                 <!-- Funding items will be inserted here by JavaScript -->
             </div>
@@ -213,13 +208,10 @@
     <section id="media" class="py-20 bg-light">
         <div class="container mx-auto px-4 md:px-6">
             <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-center">Media</h2>
-            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Research activities, fieldwork and presentations
-            </p>
-
+            <p class="text-center text-dark/70 max-w-2xl mx-auto mb-16">Research activities, fieldwork and presentations</p>
+            
             <div class="text-center">
-                <a href="https://www.researchgate.net/profile/Dongchuan-Jian/research" target="_blank"
-                    class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
-                    id="media-link">
+                <a href="https://www.researchgate.net/profile/Dongchuan-Jian/research" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30" id="media-link">
                     <i class="fa fa-external-link"></i>
                     <span>View media</span>
                 </a>
@@ -234,7 +226,7 @@
                 <div class="mb-6 md:mb-0" id="footer-name">
                     <!-- Will be populated by JavaScript -->
                 </div>
-
+                
                 <div class="flex flex-col items-center md:items-end">
                     <div class="flex space-x-4 mb-4" id="footer-social-links">
                         <!-- Will be populated by JavaScript -->
@@ -246,7 +238,7 @@
     </footer>
 
     <script>
-        // Embedded personal data
+        // Embedded personal data - 所有PDF链接已更新为ResearchGate研究页面
         const personalData = {
             "basicInfo": {
                 "name": "Dongchuan Jian, Ph.D.",
@@ -410,7 +402,7 @@
                     "month": "02",
                     "day": "28",
                     "doi": "https://doi.org/10.1016/j.precamres.2025.107680",
-                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",
+                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",  // 更新为ResearchGate链接
                     "imageUrl": "assets/images/2025PR.png",
                     "imageAlt": "Zircon grain under microscope"
                 },
@@ -423,7 +415,7 @@
                     "month": "06",
                     "day": "23",
                     "doi": "https://doi.org/10.1130/B38160.1",
-                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",
+                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",  // 更新为ResearchGate链接
                     "imageUrl": "assets/images/2025GSAB.png",
                     "imageAlt": "Geological map of Yunkai terrane"
                 },
@@ -436,7 +428,7 @@
                     "month": "09",
                     "day": "08",
                     "doi": "https://doi.org/10.1029/2022JB024606",
-                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",
+                    "pdfUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research",  // 更新为ResearchGate链接
                     "imageUrl": "assets/images/2022JGR.png",
                     "imageAlt": "Graph showing zircon age distributions"
                 }
@@ -455,7 +447,7 @@
             ],
             "media": {
                 "linkText": "View media",
-                "placeholderUrl": "https://www.researchgate.net/profile/Dongchuan-Jian"
+                "placeholderUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research"
             }
         };
 
@@ -487,6 +479,20 @@
         const itemsPerPage = 6;
         let totalPages = 1;
         let allNewsItems = [];
+
+        // 检查并确保Font Awesome加载成功
+        function ensureFontAwesomeLoaded() {
+            // 检查是否已加载
+            if (typeof FontAwesome !== 'undefined') return true;
+            
+            // 动态加载备用CDN
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css';
+            link.crossOrigin = 'anonymous';
+            document.head.appendChild(link);
+            return true;
+        }
 
         // Helper function to parse date strings into consistent Date objects
         function parseDate(dateString) {
@@ -520,12 +526,12 @@
             createSocialLinks(socialLinks);
             createSocialLinks(mobileSocialLinks);
             createSocialLinks(footerSocialLinks);
-
+            
             footerName.innerHTML = `
                 <h3 class="text-xl font-bold mb-2">${personalData.basicInfo.name}</h3>
                 <p class="text-white/60">${personalData.basicInfo.position}</p>
             `;
-
+            
             currentYear.textContent = new Date().getFullYear();
         }
 
@@ -550,7 +556,7 @@
                     </a>
                 </div>
             `;
-
+            
             heroImageContainer.innerHTML = `
                 <div class="w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl animate-float">
                     <img src="${personalData.basicInfo.heroImage}" alt="${personalData.basicInfo.heroImageAlt}" class="w-full h-full object-cover">
@@ -583,7 +589,7 @@
                     </li>
                 `;
             });
-
+            
             aboutContent.innerHTML = `
                 <p>${personalData.about.bio}</p>
                 
@@ -609,17 +615,17 @@
                 description: `Published paper: "${pub.title}" by ${pub.authors}.`,
                 type: 'publication'
             }));
-
+            
             // Combine existing news with publication news and sort
             allNewsItems = [...personalData.news, ...publicationNews].sort((a, b) => {
                 if (a.date > b.date) return -1;
                 if (a.date < b.date) return 1;
                 return 0;
             });
-
+            
             // Calculate total pages
             totalPages = Math.ceil(allNewsItems.length / itemsPerPage);
-
+            
             // Initialize pagination
             renderPagination();
             showPage(currentPage);
@@ -629,7 +635,7 @@
         function renderPagination() {
             // Clear existing page numbers
             pageNumbersContainer.innerHTML = '';
-
+            
             // Add page number buttons
             for (let i = 1; i <= totalPages; i++) {
                 const pageBtn = document.createElement('button');
@@ -643,10 +649,10 @@
                 });
                 pageNumbersContainer.appendChild(pageBtn);
             }
-
+            
             // Update previous/next buttons state
             updatePaginationButtons();
-
+            
             // Add event listeners to previous/next buttons
             prevPageBtn.onclick = () => {
                 if (currentPage > 1) {
@@ -656,7 +662,7 @@
                     updatePaginationButtons();
                 }
             };
-
+            
             nextPageBtn.onclick = () => {
                 if (currentPage < totalPages) {
                     currentPage++;
@@ -679,19 +685,19 @@
             const startIndex = (pageNum - 1) * itemsPerPage;
             const endIndex = Math.min(startIndex + itemsPerPage, allNewsItems.length);
             const currentItems = allNewsItems.slice(startIndex, endIndex);
-
+            
             // Render current page items
             let newsHtml = '';
             currentItems.forEach(item => {
                 // Add special badge for publications
-                const badge = item.type === 'publication' ?
+                const badge = item.type === 'publication' ? 
                     `<span class="ml-2 text-xs font-medium bg-accent/10 text-accent px-2 py-0.5 rounded-full">
                         Publication
                     </span>` : '';
-
+                
                 // Format date for display
                 const displayDate = formatDate(item.date);
-
+                
                 // Add links at the end of description if available
                 let linksHtml = '';
                 if (item.links && item.links.length > 0) {
@@ -707,7 +713,7 @@
                         <i class="fa fa-external-link"></i> View details
                     </a>`;
                 }
-
+                
                 newsHtml += `
                     <div class="bg-white p-6 rounded-xl shadow-md mb-6 hover:shadow-lg transition-shadow">
                         <div class="flex flex-col md:flex-row md:items-center gap-4 mb-3">
@@ -723,9 +729,9 @@
                     </div>
                 `;
             });
-
+            
             newsContainer.innerHTML = newsHtml;
-
+            
             // Scroll to top of news section when page changes
             document.getElementById('news').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -744,7 +750,7 @@
                     </div>
                 `;
             });
-
+            
             researchAreasContainer.innerHTML = researchHtml;
         }
 
@@ -755,7 +761,7 @@
                 if (a.month !== b.month) return b.month - a.month;
                 return b.day - a.day;
             });
-
+            
             let pubsHtml = '';
             sortedPublications.forEach(pub => {
                 pubsHtml += `
@@ -786,7 +792,7 @@
                     </div>
                 `;
             });
-
+            
             publicationsContainer.innerHTML = pubsHtml;
         }
 
@@ -814,13 +820,12 @@
                     </div>
                 `;
             });
-
+            
             fundingContainer.innerHTML = fundingHtml;
         }
 
         // Set up media section with direct link
         function setupMediaSection() {
-            // 直接在HTML中设置了链接，这里保持同步
             mediaLink.href = personalData.media.placeholderUrl;
             mediaLink.target = '_blank';
             mediaLink.querySelector('span').textContent = personalData.media.linkText;
@@ -846,14 +851,14 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
+                
                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                 }
-
+                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-
+                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -866,6 +871,9 @@
 
         // Initialize page
         function initPage() {
+            // 确保Font Awesome加载
+            ensureFontAwesomeLoaded();
+            
             populateBasicInfo();
             populateHeroSection();
             populateAboutSection();
@@ -880,5 +888,5 @@
         window.addEventListener('DOMContentLoaded', initPage);
     </script>
 </body>
-
 </html>
+    
