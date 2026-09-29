@@ -113,7 +113,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-light to-white">
         <div class="container mx-auto px-4 md:px-6">
@@ -127,7 +126,6 @@
             </div>
         </div>
     </section>
-
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-6">
@@ -140,7 +138,6 @@
             </div>
         </div>
     </section>
-
     <!-- News Section with Pagination -->
     <section id="news" class="py-20 bg-light">
         <div class="container mx-auto px-4 md:px-6">
@@ -167,7 +164,6 @@
             </div>
         </div>
     </section>
-
     <!-- Research Areas Section -->
     <section id="research" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-6">
@@ -179,7 +175,6 @@
             </div>
         </div>
     </section>
-
     <!-- Publications Section -->
     <section id="publications" class="py-20 bg-light">
         <div class="container mx-auto px-4 md:px-6">
@@ -191,7 +186,6 @@
             </div>
         </div>
     </section>
-
     <!-- Funding Section -->
     <section id="funding" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-6">
@@ -203,7 +197,6 @@
             </div>
         </div>
     </section>
-
     <!-- Media Section -->
     <section id="media" class="py-20 bg-light">
         <div class="container mx-auto px-4 md:px-6">
@@ -218,7 +211,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4 md:px-6">
@@ -236,7 +228,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // Embedded personal data - 所有PDF链接已更新为ResearchGate研究页面
         const personalData = {
@@ -294,6 +285,13 @@
                 "bioContinued": "My research findings have been published in prestigious journals including <em>Journal of Geophysical Research: Solid Earth</em> and <em>Precambrian Research</em>. I am passionate about integrating geoscience big data with traditional geological approaches to better understand Earth's evolutionary history."
             },
             "news": [
+                {
+                    "id": 15,
+                    "date": "2026-08-20",
+                    "title": "Awarded NSFC Young Scientists Fund (Category C)",
+                    "link": "#",
+                    "description": "Grant funded by National Natural Science Foundation of China, total funding 300,000 RMB."
+                },
                 {
                     "id": 1,
                     "date": "2025-07-08",
@@ -466,6 +464,16 @@
                     "duration": "January 2025 - December 2026",
                     "amount": "50,000 RMB",
                     "icon": "fa-money"
+                },
+                {
+                    "id": 2,
+                    "title": "National Natural Science Foundation of China (Young Scientists Fund, Category C)",
+                    "fundingBody": "National Natural Science Foundation of China (NSFC)",
+                    "grantNumber": "",
+                    "awardedDate": "2026",
+                    "duration": "",
+                    "amount": "300,000 RMB",
+                    "icon": "fa-flask"
                 }
             ],
             "media": {
@@ -473,7 +481,6 @@
                 "placeholderUrl": "https://www.researchgate.net/profile/Dongchuan-Jian/research"
             }
         };
-
         // DOM Elements
         const navName = document.getElementById('nav-name');
         const socialLinks = document.getElementById('social-links');
@@ -496,13 +503,11 @@
         const prevPageBtn = document.getElementById('prev-page');
         const nextPageBtn = document.getElementById('next-page');
         const pageNumbersContainer = document.getElementById('page-numbers');
-
         // Pagination variables
         let currentPage = 1;
         const itemsPerPage = 6;
         let totalPages = 1;
         let allNewsItems = [];
-
         // 检查并确保Font Awesome加载成功
         function ensureFontAwesomeLoaded() {
             // 检查是否已加载
@@ -516,19 +521,16 @@
             document.head.appendChild(link);
             return true;
         }
-
         // Helper function to parse date strings into consistent Date objects
         function parseDate(dateString) {
             return new Date(dateString);
         }
-
         // Helper function to format date for display
         function formatDate(dateString) {
             const date = new Date(dateString);
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             return date.toLocaleDateString('en-US', options);
         }
-
         // Helper function to create social links
         function createSocialLinks(container) {
             container.innerHTML = '';
@@ -542,7 +544,6 @@
                 container.appendChild(a);
             });
         }
-
         // Populate basic information
         function populateBasicInfo() {
             navName.textContent = personalData.basicInfo.name.split(',')[0];
@@ -557,7 +558,6 @@
             
             currentYear.textContent = new Date().getFullYear();
         }
-
         // Populate hero section
         function populateHeroSection() {
             heroContent.innerHTML = `
@@ -597,7 +597,6 @@
                 </div>
             `;
         }
-
         // Populate about section
         function populateAboutSection() {
             let educationHtml = '';
@@ -626,7 +625,6 @@
                 <p>${personalData.about.bioContinued}</p>
             `;
         }
-
         // Initialize news data and pagination
         function initNewsData() {
             // Convert publications to news items with complete date information
@@ -653,7 +651,6 @@
             renderPagination();
             showPage(currentPage);
         }
-
         // Render pagination controls
         function renderPagination() {
             // Clear existing page numbers
@@ -695,13 +692,11 @@
                 }
             };
         }
-
         // Update previous/next buttons state
         function updatePaginationButtons() {
             prevPageBtn.disabled = currentPage === 1;
             nextPageBtn.disabled = currentPage === totalPages;
         }
-
         // Show specific page of news items
         function showPage(pageNum) {
             // Calculate indices for items to display
@@ -758,7 +753,6 @@
             // Scroll to top of news section when page changes
             document.getElementById('news').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-
         // Populate research areas
         function populateResearchAreas() {
             let researchHtml = '';
@@ -776,7 +770,6 @@
             
             researchAreasContainer.innerHTML = researchHtml;
         }
-
         // Populate publications sorted by year (newest first)
         function populatePublications() {
             const sortedPublications = [...personalData.publications].sort((a, b) => {
@@ -818,7 +811,6 @@
             
             publicationsContainer.innerHTML = pubsHtml;
         }
-
         // Populate funding
         function populateFunding() {
             let fundingHtml = '';
@@ -833,9 +825,9 @@
                                 <h3 class="text-xl font-semibold mb-3">${fund.title}</h3>
                                 <div class="space-y-2 text-dark/80">
                                     <p><span class="font-medium">Funding Body:</span> ${fund.fundingBody}</p>
-                                    <p><span class="font-medium">Grant Number:</span> ${fund.grantNumber}</p>
+                                    <p><span class="font-medium">Grant Number:</span> ${fund.grantNumber || 'Pending'}</p>
                                     <p><span class="font-medium">Awarded:</span> ${fund.awardedDate}</p>
-                                    <p><span class="font-medium">Duration:</span> ${fund.duration}</p>
+                                    <p><span class="font-medium">Duration:</span> ${fund.duration || 'To be determined'}</p>
                                     <p><span class="font-medium">Amount:</span> ${fund.amount}</p>
                                 </div>
                             </div>
@@ -846,19 +838,16 @@
             
             fundingContainer.innerHTML = fundingHtml;
         }
-
         // Set up media section with direct link
         function setupMediaSection() {
             mediaLink.href = personalData.media.placeholderUrl;
             mediaLink.target = '_blank';
             mediaLink.querySelector('span').textContent = personalData.media.linkText;
         }
-
         // Mobile menu toggle
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -869,7 +858,6 @@
                 navbar.classList.add('shadow-sm');
             }
         });
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -891,7 +879,6 @@
                 }
             });
         });
-
         // Initialize page
         function initPage() {
             // 确保Font Awesome加载
@@ -906,10 +893,8 @@
             populateFunding();
             setupMediaSection();
         }
-
         // Initialize when page loads
         window.addEventListener('DOMContentLoaded', initPage);
     </script>
 </body>
 </html>
-    
